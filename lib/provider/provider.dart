@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CasterProvider with ChangeNotifier{
-
+class CasterProvider with ChangeNotifier {
   List<String> url = [
     'https://image.shutterstock.com/image-vector/lp-record-vinyl-disc-cover-260nw-1168701541.jpg',
     'https://image.freepik.com/free-vector/electro-music-album_53876-67225.jpg',
@@ -18,6 +17,16 @@ class CasterProvider with ChangeNotifier{
     'Updateted yesterday',
   ];
 
+  List<String> listMusic = [
+    'Technology',
+    'Music',
+    'Vidio',
+    'Service',
+    'Album',
+    'Communication',
+    'English',
+    "K-Pop"
+  ];
 
   List<Color> colors = [
     Color.fromRGBO(233, 140, 137, 1),
@@ -42,7 +51,6 @@ class CasterProvider with ChangeNotifier{
   void press() {
     _onPressed = !_onPressed;
   }
-
 
   set onPageChanged(int value) {
     _onPageChanged = value;

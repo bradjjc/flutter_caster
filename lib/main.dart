@@ -3,7 +3,6 @@ import 'package:flutter_jetcaster/provider/provider.dart';
 import 'package:flutter_jetcaster/ui/home.dart';
 import 'package:provider/provider.dart';
 
-
 void main() {
   runApp(MyApp());
 }
@@ -18,9 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MultiProvider(
-          providers: [
-            ChangeNotifierProvider(create: (_) => CasterProvider())
-          ],
+        providers: [ChangeNotifierProvider(create: (_) => CasterProvider())],
         child: Home(),
       ),
     );

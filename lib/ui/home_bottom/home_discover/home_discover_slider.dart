@@ -3,14 +3,14 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_jetcaster/provider/provider.dart';
 import 'package:provider/provider.dart';
 
-class HomeSlider extends StatefulWidget {
-  const HomeSlider({Key key}) : super(key: key);
+class HomeDiscoverSlider extends StatefulWidget {
+  const HomeDiscoverSlider({Key key}) : super(key: key);
 
   @override
-  _HomeSliderState createState() => _HomeSliderState();
+  _HomeDiscoverSliderState createState() => _HomeDiscoverSliderState();
 }
 
-class _HomeSliderState extends State<HomeSlider> {
+class _HomeDiscoverSliderState extends State<HomeDiscoverSlider> {
   @override
   Widget build(BuildContext context) {
     return CarouselSlider(
@@ -22,16 +22,12 @@ class _HomeSliderState extends State<HomeSlider> {
             .map((url) => buildItems(url))
             .toList(),
         options: CarouselOptions(
-            enableInfiniteScroll: false,
-            height: 200,
-            aspectRatio: 1,
-            viewportFraction: 0.45,
-            enlargeCenterPage: true,
-            onPageChanged: (index, reason) {
-              setState(() {
-                context.read<CasterProvider>().onPageChanged = index;
-              });
-            }));
+          enableInfiniteScroll: false,
+          height: 180,
+          aspectRatio: 1,
+          viewportFraction: 0.47,
+          disableCenter: true,
+        ));
   }
 
   Widget buildItems(MapEntry<int, String> url) {
@@ -93,14 +89,6 @@ class _HomeSliderState extends State<HomeSlider> {
             ),
           ),
         ),
-        SizedBox(
-          height: 8.0,
-        ),
-        Text(
-          '${context.read<CasterProvider>().upDate[context.read<CasterProvider>().onPageChanged]}',
-          textAlign: TextAlign.center,
-          style: TextStyle(color: Colors.grey, fontSize: 16),
-        )
       ],
     );
   }
