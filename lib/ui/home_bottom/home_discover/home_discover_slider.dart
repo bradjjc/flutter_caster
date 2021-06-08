@@ -13,9 +13,9 @@ class HomeDiscoverSlider extends StatefulWidget {
 class _HomeDiscoverSliderState extends State<HomeDiscoverSlider> {
   @override
   Widget build(BuildContext context) {
+    var list = context.read<CasterProvider>();
     return CarouselSlider(
-        items: context
-            .read<CasterProvider>()
+        items: list
             .url
             .asMap()
             .entries

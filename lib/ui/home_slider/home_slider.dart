@@ -13,9 +13,9 @@ class HomeSlider extends StatefulWidget {
 class _HomeSliderState extends State<HomeSlider> {
   @override
   Widget build(BuildContext context) {
+    var list = context.read<CasterProvider>();
     return CarouselSlider(
-        items: context
-            .read<CasterProvider>()
+        items: list
             .url
             .asMap()
             .entries
@@ -29,7 +29,7 @@ class _HomeSliderState extends State<HomeSlider> {
             enlargeCenterPage: true,
             onPageChanged: (index, reason) {
               setState(() {
-                context.read<CasterProvider>().onPageChanged = index;
+                list.onPageChanged = index;
               });
             }));
   }

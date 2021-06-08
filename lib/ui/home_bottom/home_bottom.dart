@@ -22,14 +22,9 @@ class _HomeBottomState extends State<HomeBottom>
     _controller = new TabController(length: 2, vsync: this);
   }
 
-  // @override
-  // void dispose() {
-  //   _controller.dispose();
-  //   super.dispose();
-  // }
-
   @override
   Widget build(BuildContext context) {
+    var list = context.read<CasterProvider>();
     return DefaultTabController(
       length: 2, // Added
       initialIndex: 0, //Added
@@ -49,14 +44,14 @@ class _HomeBottomState extends State<HomeBottom>
                 labelColor: Colors.white,
                 indicatorColor: context
                     .read<CasterProvider>()
-                    .colors[context.read<CasterProvider>().onPageChanged],
+                    .colors[list.onPageChanged],
                 controller: _controller,
                 tabs: [
                   Tab(text: "Your Library"),
                   Tab(text: "Discover"),
                 ])),
         Container(
-            height: MediaQuery.of(context).size.height / 2.3,
+            height: MediaQuery.of(context).size.height / 1.3,
             child: new TabBarView(
               controller: _controller,
               children: <Widget>[

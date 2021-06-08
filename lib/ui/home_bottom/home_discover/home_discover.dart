@@ -42,11 +42,10 @@ class _HomeDiscoverState extends State<HomeDiscover> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(40)),
                         border: Border.all(
-                          color: _selectedIndex != null &&
-                                  _selectedIndex == index
-                              ? list.colors[
-                                  context.read<CasterProvider>().onPageChanged]
-                              : Colors.white,
+                          color:
+                              _selectedIndex != null && _selectedIndex == index
+                                  ? list.colors[list.onPageChanged]
+                                  : Colors.white,
                           width: 4.0,
                         ),
                       ),
